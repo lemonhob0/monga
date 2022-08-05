@@ -1,0 +1,173 @@
+@import "../../vars.scss";
+.updates {
+  width: 90%;
+  margin-inline: auto;
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em 1em;
+    @include mobile {
+      display: block;
+    }
+    li {
+      width: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 13em auto;
+      @include mobile {
+        display: block;
+        margin-bottom: 2.5em;
+        border-bottom: 1px solid $black_50;
+      }
+      .page_container {
+        height: 20em;
+        cursor: pointer;
+        position: relative;
+        @include mobile {
+          width: 13em;
+          margin-inline: auto;
+        }
+        .image {
+          position: relative;
+          height: 100%;
+          z-index: 2;
+        }
+        .pages {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          transition: 0.2s;
+          &.isHover {
+            z-index: 3;
+          }
+          top: 0;
+          left: 0;
+          .page {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            transition: 0.2s;
+            opacity: 0;
+            &.display {
+              z-index: 3;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      article {
+        padding-inline: 1em;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        display: grid;
+        grid-template-rows: auto auto;
+        @include mobile {
+          padding-inline: 0;
+          display: block;
+        }
+        .infos {
+          h3 {
+            font-family: $font-60;
+            color: $white_100;
+            width: fit-content;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            span {
+              color: $white_50;
+              font-size: 0.8rem;
+              font-weight: 100;
+            }
+          }
+          p {
+            color: $white_50;
+            font-family: $font-60;
+            font-size: 0.9rem;
+            padding-block: 1.5em;
+            span {
+              letter-spacing: 1px;
+              font-size: 0.7rem;
+              padding-left: 2em;
+            }
+          }
+          .freePages {
+            padding: 0.5em;
+            border-radius: $min_radius;
+            font-family: $font-60;
+            color: $white_100;
+            font-weight: 600;
+            background: $red_primary;
+            letter-spacing: 1px;
+            @include mobile {
+              margin-bottom: 1em;
+            }
+            &:hover {
+              background: $red_primary_hover;
+            }
+          }
+        }
+        .btns {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          @include mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+          button {
+            display: block;
+            border-radius: $min_radius;
+            width: 12em;
+            padding: 1em;
+            color: $white_100;
+            font-family: $font-60;
+            cursor: pointer;
+            @include mobile {
+              width: 90;
+            }
+            &:nth-child(even) {
+              margin-top: 1em;
+              @include mobile {
+                margin-top: 0;
+                margin-left: auto;
+              }
+            }
+            &.price {
+              background: $brown_primary;
+              &:hover {
+                background: $brown_primary_hover;
+              }
+            }
+            &.magic {
+              background: $magic;
+              &:hover {
+                background: $magic_hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .display_more {
+    display: block;
+    width: 50%;
+    padding: 0.6em;
+    margin-top: 3em;
+    margin-inline: auto;
+    border-radius: $min_radius;
+    font-size: 1.4rem;
+    background: $brown_primary;
+    color: $white_100;
+    font-family: $font-40;
+    cursor: pointer;
+    &.loading {
+      cursor: not-allowed;
+    }
+    &:hover {
+      background: $brown_primary_hover;
+    }
+  }
+}

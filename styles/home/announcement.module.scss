@@ -1,0 +1,76 @@
+@import "../vars.scss";
+.ann {
+  width: 100%;
+  height: 60vh;
+  background: $black_50;
+  display: grid;
+  place-items: center;
+  position: relative;
+  @include mobile {
+    height: 50vh;
+    margin-bottom: 4em;
+  }
+  &::before,
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    @include mobile {
+      display: none;
+    }
+  }
+  &::before {
+    left: 0;
+    border-top: 30vh solid transparent;
+    border-bottom: 30vh solid transparent;
+    border-left: 10em solid $wash;
+  }
+  &::after {
+    right: 0;
+    border-top: 30vh solid transparent;
+    border-bottom: 30vh solid transparent;
+    border-right: 10em solid $wash;
+  }
+  article {
+    text-align: center;
+    width: fit-content;
+    @include mobile {
+      padding-inline: 1em;
+    }
+    h1 {
+      font-family: $font-60;
+      color: $white_100;
+      @include mobile {
+        line-height: 1.6rem;
+      }
+    }
+    button {
+      padding: 0.5em;
+      border-radius: 10em;
+      font-family: $font-40;
+      font-size: 1.7rem;
+      cursor: pointer;
+      @include mobile {
+        font-size: 1.3rem;
+        border-radius: $min_radius;
+      }
+      &.signup {
+        width: 100%;
+        background: $brown_primary;
+        color: $white_100;
+        margin-block: 1.5rem;
+        @include mobile {
+          width: 70%;
+        }
+        &:hover {
+          background: $brown_primary_hover;
+        }
+      }
+      &.signin {
+        width: 70%;
+        background: $white_50;
+      }
+    }
+  }
+}

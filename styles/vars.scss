@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Nunito+Sans:wght@200&display=swap");
+/* FONTS */
+$font-60: "Nunito Sans", sans-serif;
+$font-40: "Mouse Memoirs", sans-serif;
+
+/* COLORS */
+
+$wash: #111111;
+$white_100: #ffffff;
+$white_50: #dbdbdb;
+$black_50: #303030;
+
+$brown_primary: #833016;
+$brown_primary_hover: #772911;
+
+$magic: #5c0dc0;
+$magic_hover: #4e0ba5;
+
+$red_primary: #ff1919;
+$red_primary_hover: #db0c0c;
+
+$min_radius: 0.3em;
+
+/* Functions */
+
+@mixin mobile {
+  @media screen and (max-width: 986px) {
+    @content;
+  }
+}

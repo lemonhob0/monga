@@ -1,0 +1,42 @@
+@import "../../vars.scss";
+.slide_container {
+  width: 90%;
+  margin: 1em auto;
+  position: relative;
+  .slide_cards {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .swiper {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $black_50;
+    width: fit-content;
+    height: fit-content;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10em;
+    z-index: 99;
+    color: $magic;
+    @include mobile {
+      display: none;
+    }
+    &.inActive {
+      opacity: 0.5;
+      color: $white_50;
+    }
+    &.forward {
+      right: 0;
+    }
+    &.backward {
+      left: 0;
+    }
+  }
+}

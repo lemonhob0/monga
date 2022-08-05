@@ -1,0 +1,8 @@
+@import "../vars.scss";
+.usericon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  box-shadow: 0 0 0 2px $magic;
+  cursor: pointer;
+}

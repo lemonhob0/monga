@@ -1,0 +1,94 @@
+@import "../../vars.scss";
+.nav_desktop {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background: #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  z-index: 9999;
+  @include mobile {
+    display: none;
+  }
+}
+
+.links {
+  display: flex;
+  padding-left: 1em;
+  .logo {
+    align-self: center;
+    color: $white_100;
+    padding: 0.5em;
+    position: relative;
+    width: 3rem;
+    height: 90%;
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    padding-left: 1em;
+    font-family: $font-40;
+    li {
+      padding: 1em;
+      color: $white_100;
+      position: relative;
+      cursor: pointer;
+      font-size: 1.4rem;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 0;
+        background: $magic;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.2s;
+      }
+      &:hover::before {
+        height: 7px;
+      }
+    }
+  }
+}
+
+.search {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 6em;
+    input,
+    button {
+      padding: 1.3em 1em;
+      font-family: $font-60;
+    }
+    input {
+      width: 100%;
+      background: $black_50;
+      color: $white_100;
+      border-radius: $min_radius 0 0 $min_radius;
+    }
+    button {
+      background: $magic;
+      color: $white_100;
+      cursor: pointer;
+      border-radius: 0 $min_radius $min_radius 0;
+      transition: 0.2s;
+      &:hover {
+        background: $magic_hover;
+      }
+    }
+  }
+}
+
+.auth {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1.3em;
+}

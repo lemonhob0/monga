@@ -1,0 +1,47 @@
+@import "../../vars";
+$auth_margin: 1em;
+.nav_mobile {
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  border-top: 1px solid $black_50;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: $wash;
+    border-radius: 100em;
+    border: 1px solid $black_50;
+  }
+  ul {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: $wash;
+
+    li {
+      padding-block: 0.5em;
+      color: $white_50;
+      text-align: center;
+      font-family: $font_40;
+      letter-spacing: 1px;
+      &.discover {
+        position: relative;
+        padding-block: 0;
+      }
+    }
+  }
+}
+.auth {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: $auth_margin;
+  margin-top: $auth_margin;
+  z-index: 9999;
+}
